@@ -1,0 +1,122 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Un lugar para ti 💙</title>
+<style>
+*{box-sizing:border-box}
+body{
+ margin:0;
+ font-family:Georgia,serif;
+ background:linear-gradient(145deg,#061536,#075985,#06b6d4);
+ color:white;
+ min-height:100vh;
+ display:flex;
+ justify-content:center;
+ align-items:center;
+ padding:22px;
+}
+.contenedor{
+ width:100%;
+ max-width:520px;
+ text-align:center;
+}
+h1{color:#a5f3fc;font-size:30px}
+p{line-height:1.9}
+.panel{
+ background:rgba(255,255,255,.10);
+ border:1px solid #67e8f9;
+ border-radius:22px;
+ padding:25px;
+ box-shadow:0 0 25px #0891b244;
+}
+input,button{
+ width:100%;
+ padding:14px;
+ border-radius:12px;
+ font-size:16px;
+ margin-top:12px;
+}
+input{border:2px solid #67e8f9;color:#082f49}
+button{
+ background:#67e8f9;
+ color:#082f49;
+ border:0;
+ font-weight:bold;
+ cursor:pointer;
+}
+button:hover{background:white}
+.oculto{display:none}
+.carta{
+ text-align:left;
+ white-space:pre-line;
+ background:#f0fdff;
+ color:#12304a;
+ padding:22px;
+ border-radius:16px;
+ line-height:1.9;
+ margin-top:18px;
+}
+.volver{background:#dbeafe}
+</style>
+</head>
+<body>
+<div class="contenedor">
+
+<section id="inicio" class="panel">
+ <div style="font-size:45px">🩵</div>
+ <h1>Un lugar especial para ti</h1>
+ <p>No soy de muchas palabras, pero cada una de estas te pertenece..</p>
+ <p>Hay algo que quiero que descubras.</p>
+ <input id="clave" type="password" placeholder="Ingresa la contraseña">
+ <button onclick="ingresar()">INGRESAR 💙</button>
+ <p id="error" style="color:#a5f3fc"></p>
+</section>
+
+<section id="menu" class="panel oculto">
+ <h1>Para ti, Sebas 💙</h1>
+ <p>Elige cuál carta quieres abrir.</p>
+ <button onclick="abrirCarta(1)">💌 Nuestra penumbra</button>
+ <button onclick="abrirCarta(2)">🩵 Carta ciega</button>
+</section>
+
+<section id="carta1" class="oculto">
+ <h1>Nuestra penumbra</h1>
+ <div class="carta">Habito en una prisión de aire que me ahoga, donde cada respiración sin ti es apenas un suspiro perdido en la nada. Extiendo las manos hacia el vacío, implorando la gracia de tu presencia, pues solo la caricia de tus manos posee el poder sagrado de liberar mi alma de esta condena de soledad y tristeza. Deseo, con un fervor que me quema los huesos, ser poseída entero por tu ser; que tus dedos reclamen cada rincón de mi espíritu y que tu voluntad disuelva la mía hasta que no quede rastro de lo que fui.
+Eres el único aire que me devuelves la vida y, al mismo tiempo, la hoguera en la que anhelo consumirme. Si amar fuera perdición, prefiero mil veces la ruina a tus pies que la salvación lejos de ti.</div>
+ <button class="volver" onclick="volverMenu()">← Volver a las cartas</button>
+</section>
+
+<section id="carta2" class="oculto">
+ <h1>Carta ciega</h1>
+ <div class="carta">Me ahogo en la inmensidad de lo que siento por ti, acorralada por este amor feroz que me quema la sangre y me dejas sin aliento. Eres el único capaz de arrancarme de las garras de la soledad; por eso le imploro a tus manos que me tomen, que me reclamen, que traspasen la carne y tomen posesión absoluta de mi alma. Deseo que me despojes de mí misma hasta que no quede rastro de mi existencia, solo el eco de tu nombre latiendo en mis entrañas.
+Te amo con la angustia del que sabe que moriría sin tu aire, con la devoción ciega del que ha encontrado su templo en tu pecho. Hazme tuya hasta los huesos, consume mi libertad, fúndeme en tu ser; prefiero perderme eternamente en ti que existir un solo segundo sin la bendición de tu luz.</div>
+ <button class="volver" onclick="volverMenu()">← Volver a las cartas</button>
+</section>
+
+</div>
+<script>
+function ingresar(){
+ if(document.getElementById('clave').value==='14/06'){
+  document.getElementById('inicio').classList.add('oculto');
+  document.getElementById('menu').classList.remove('oculto');
+  document.getElementById('error').textContent='';
+ }else{
+  document.getElementById('error').textContent='Esa no es la contraseña. Inténtalo otra vez 💙';
+ }
+}
+function abrirCarta(n){
+ document.getElementById('menu').classList.add('oculto');
+ document.getElementById('carta'+n).classList.remove('oculto');
+}
+function volverMenu(){
+ document.getElementById('carta1').classList.add('oculto');
+ document.getElementById('carta2').classList.add('oculto');
+ document.getElementById('menu').classList.remove('oculto');
+}
+</script>
+</body>
+   </html>
+   
